@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    font-size: 18px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.results {
+    text-align: center;
+}
+
+section {
+    margin: 5px 5px;
+    padding: 10px 15px;
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+
+hr {
+    margin: 5px 5px;
+    border: 2px solid skyblue;
+    border-radius: 5px;
+}
