@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+h1, h2 {
+    margin: 0;
+    text-align: center;
+}
+
+section {
+    background-color: aquamarine;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.section-result {
+    text-align: center;
+}
