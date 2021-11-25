@@ -1,4 +1,61 @@
+body {
+    font-family: 'Comic Neue', cursive;
+    font-size: 20px;
+    margin: 0;
+    background-color: gray;
+}
+
+h1 {
+    font-weight: 700;
+}
 
 li {
     display: inline;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;;
+}
+.cell {
+    box-flex: 1;
+    flex: 1 1 auto; 
+
+    padding: 10px;
+    margin: 10px;
+
+    background-color: orangered;
+    border: 1px solid red;
+    border-radius: 5px;
+    text-align: center;
+}
+img {max-width:100%;}
+
+.container {
+    background-color: skyblue;
+    padding: 25px 25px;
+    margin: 25px 25px;
+    border-radius: 5px;
+}
+
+header {
+    background-color: yellowgreen;
+    padding: 0px;
+    margin: 0px 25px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: rgb(164, 194, 81);
+    padding: 25px 25px;
+    margin: 25px 25px;
+    border-radius: 5px;
+}
+
+a {
+    color: red;
+}
+
+a:hover, a:focus {
+    color: purple;
 }
