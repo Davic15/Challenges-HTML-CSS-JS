@@ -1,11 +1,8 @@
 const buttonEl = document.querySelector(".calculate");
-let spanEl = document.querySelector("result");
-
+let spanEl = document.querySelector(".result");
 let f1 = 0, f2 = 0, f3 = 0;
 
 buttonEl.addEventListener("click", fibonacci);
-
-// Calculate the addition for the fibonnaci serie
 
 function fibonacci() {
     let sum = 0;
@@ -28,7 +25,6 @@ function fibonacci() {
             sum = sum + f3;
         } 
     } while (sum <= 4000000)
-    console.log(sum);
     spanEl.textContent = sum;
 }
 
