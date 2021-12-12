@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    background-image: url("../img/email-pattern.png");
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.container {
+    width: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 75vh;
+}
+
+td {
+    font-weight: 700;
+}
+
+span {
+    font-weight: 400;
+}
+
+td {
+    padding: 0 2em;
+}
+
+footer {
+    text-align: center;
+    font-weight: 700;
+}
