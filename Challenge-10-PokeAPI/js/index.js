@@ -21,7 +21,7 @@ function getImagePokemon (pokemonName) {
         containerDexEl.innerHTML += `
             <div class="card">
                 <div class="header">
-                    <p>${data.name}</p>
+                    <h3 class="pokemon-name">${data.name}</h3>
                 </div>
                 <div class="container">
                     <img src="${urlIMg}" />

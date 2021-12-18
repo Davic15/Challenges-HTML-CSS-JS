@@ -5,6 +5,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    color: gray;
 }
 
 body {
@@ -51,7 +52,7 @@ h2 {
   
 .header {
     height: 5rem;
-    background: red;
+    background: rgba(231, 240, 109, 0.2);
     color: white;
     text-align: center;
 }
@@ -67,17 +68,21 @@ img {
     object-fit:fill;
 }
 
+.pokemon-name {
+    font-family: 'Pokemon Solid', sans-serif;
+    letter-spacing: 0.2rem;
+    color: gray;
+}
+
 
 @media (max-width: 1024px) {
     .card {
-      min-width: 45%; 
+        min-width: 45%; 
     }
-
-  }
+}
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .card {
-      min-width: 100%; 
+        min-width: 100%; 
     }
-
-  }
+}
