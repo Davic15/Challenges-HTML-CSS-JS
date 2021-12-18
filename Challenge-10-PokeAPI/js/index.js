@@ -5,13 +5,7 @@ const btnSearchPokemonEl = document.getElementById("btn-search-pokemon");
 const txtSearchPokemonEl = document.getElementById("txt-name-pokemon");
 const headerDescriptionEl = document.getElementById("description");
 const pokemonInformationEl = document.getElementById("pokemon-information");
-
-btnSearchPokemonEl.addEventListener("click", pokemonSearch);
-
-function pokemonSearch() {
-    console.log(txtSearchPokemonEl.value)
-    console.log("hi")
-}
+const containerDexEl = document.getElementById("container-dex");
 
 function getImagePokemon (pokemonName) {
     fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`)
@@ -23,19 +17,31 @@ function getImagePokemon (pokemonName) {
         }
     })
     .then (data => {
-        console.log(data.sprites.front_default)
-        pokemonInformationEl.innerHTML += `
-        <p>${pokemonName}</p><br>
-        <img src="${data.sprites.front_default}" />
+        let urlIMg = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data.id}.gif`;
+        containerDexEl.innerHTML += `
+            <div class="card">
+                <div class="header">
+                    <p>${data.name}</p>
+                </div>
+                <div class="container">
+                    <img src="${urlIMg}" />
+                    <p>Experience: ${data.base_experience}</p>
+                    <p>Hp: ${data.stats[0].base_stat}</p>
+                    <p>Attack: ${data.stats[1].base_stat}</p>
+                    <p>Defense: ${data.stats[2].base_stat}</p>
+                    <p>Special: ${data.stats[3].base_stat}</p>
+                </div>
+            </div>
         `;
     })
     .catch (err => {
         console.log(err);
-    })
+    });
 }
 
 
-fetch("https://pokeapi.co/api/v2/pokedex/kanto")
+function loadPokeCards() {
+    fetch("https://pokeapi.co/api/v2/pokedex/kanto")
     .then(res => {
         if(!res.ok){
             throw Error("There is an error with the server");
@@ -44,7 +50,6 @@ fetch("https://pokeapi.co/api/v2/pokedex/kanto")
         }
     })
     .then(data => {
-        console.log(data);
         headerDescriptionEl.innerText = data.descriptions[3].description;
         for (const element of data.pokemon_entries){
             getImagePokemon(element.pokemon_species.name);
@@ -53,3 +58,6 @@ fetch("https://pokeapi.co/api/v2/pokedex/kanto")
     .catch(err => {
         console.log(err);
     });
+}
+
+loadPokeCards();

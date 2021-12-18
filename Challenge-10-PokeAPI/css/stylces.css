@@ -8,9 +8,7 @@ html, body {
 }
 
 body {
-    background-image: url("../img/pokemon-pattern.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: url("../img/email-pattern.png");
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -25,24 +23,61 @@ h1 {
     font-family: 'Pokemon Solid', sans-serif;
     color: yellow;
     font-size: 5rem;
-    -webkit-text-stroke: 2px black;
+    -webkit-text-stroke: 2px blue;
 }
 
 .container {
-    border: 1px solid blue;
     margin: 5px 25px;
     padding: 0 25px;
 }
 
-.column {
-    margin: 15px auto;
+h2 {
+    text-align: center;
 }
 
-input[type=text] {
+.container-dex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.card {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    border: 1px red solid;
     margin-bottom: 10px;
-    width: 100%;
+}
+  
+.header {
+    height: 5rem;
+    background: red;
+    color: white;
+    text-align: center;
+}
+  
+.container {
+    padding: 2px 16px;
+    text-align: center;
 }
 
-fieldset {
-    margin: 25px 30%;
+img {
+    width:  75px;
+    height: 75px;
+    object-fit:fill;
 }
+
+
+@media (max-width: 1024px) {
+    .card {
+      min-width: 45%; 
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      min-width: 100%; 
+    }
+
+  }

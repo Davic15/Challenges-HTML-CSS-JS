@@ -4,6 +4,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/stylces.css">
         <title>PokeApi Example</title>
     </head>
@@ -13,18 +14,13 @@
             <p>Page developed to test the PokeAPI and to improve my Web developer skills</p>
         </header>
         <main class="container">
-            <div class="column">
-                <fieldset>
-                    <legend class="column">Pokemon Region</legend>
-                    <input type="text" id="txt-name-pokemon" placeholder="Pokemon name">
-                    <button id="btn-search-pokemon">Search Pokemon</button>
-                </fieldset>
-            </div>
+            
             <div id="pokemon-information" class="pokemon-information">
                 <h2 id="description"></h2>
             </div>
-        </main>
 
+            <div id="container-dex" class="container-dex"></div>
+        </main>
         <script src="js/index.js"></script>
     </body>
 </html>
