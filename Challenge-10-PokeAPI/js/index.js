@@ -50,6 +50,7 @@ function loadPokeCards() {
         }
     })
     .then(data => {
+        console.log(data)
         headerDescriptionEl.innerText = data.descriptions[3].description;
         for (const element of data.pokemon_entries){
             getImagePokemon(element.pokemon_species.name);
