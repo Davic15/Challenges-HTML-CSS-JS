@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
         <title>Tour Website (OpenTripMap)</title>
     </head>
@@ -10,20 +13,28 @@
         </header>
         <div class="container">
             <div class="column">
-                <div class="col">
+                <div class="col header">
                     <p>
                         This example uses City and/or Country to search for interesting places. Radius 1KM
                     </p>
                     <label for="search-text">Search Criteria</label>
-                    <input type="text" id="search-text" placeholder="Country, City, Province, etc">
-                    <button id="btn-search">Search</button>
+                    <input type="text" id="search-text" placeholder="Country, City, Province, etc"><br>
+                    <button id="btn-search" class="btn">Search</button>
+                    <p><span id="information">Waiting for input</span></p>
                 </div>
-            </div>
-            <div class="column">
-                
             </div>
         </div>
 
+        <div class="container">
+            <div class="column places-container">
+                <div id="places" class="col places">
+                    <p>Hola</p>
+                </div>
+                <div div="places-image" class="col places-image">
+                    <p>bye</p>
+                </div>
+            </div>
+        </div>
         <script src="js/index.js"></script>
     </body>
 </html>

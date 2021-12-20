@@ -1,0 +1,35 @@
+body, html {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+    border: 1px solid red;
+    text-align: center;
+}
+
+
+#information {
+    font-weight: 700;
+}
+
+.container {
+    border: 1px solid blue;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 20%;
+}
+
+.btn {
+    margin: 0 25%;
+}
+
+.places-container {
+    display: flex;
+    flex-direction: column;
+}
