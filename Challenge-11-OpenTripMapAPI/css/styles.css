@@ -56,7 +56,8 @@ img {
 
 @media (max-width: 1024px) {
     .column-data {
-        min-width: 45%;
+        /*min-width: 45%;*/
+        margin: 0 auto;
         flex-direction: column;
     }
     img {
@@ -66,7 +67,9 @@ img {
   
 @media (max-width: 480px) {
     .column-data {
-        min-width: 100%;
+        /*min-width: 100%;*/
+        margin: 0 auto;
+
         flex-direction: column;
     }
     img {

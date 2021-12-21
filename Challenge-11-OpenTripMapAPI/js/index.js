@@ -38,7 +38,6 @@ function searchCity() {
 }
 
 function loadPlaces(information) {
-    console.log(information)
     fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${information.lon}&lat=${information.lat}&apikey=${apiKey}`)
     .then(res => {
         if (!res.ok){
@@ -48,10 +47,7 @@ function loadPlaces(information) {
         }
     })
     .then (data => {
-        console.log(data);
-        //console.log(data.features[1].properties.name);
         for (const element of data.features){
-            //console.log(element.properties.xid);
             showPlaces(element.properties.xid);
         }
     })
@@ -61,7 +57,6 @@ function loadPlaces(information) {
 }
 
 function showPlaces(information) {
-    //console.log(information)
     fetch(`https://api.opentripmap.com/0.1/en/places/xid/${information}?apikey=${apiKey}`)
     .then(res => {
         if (!res.ok){
@@ -72,14 +67,6 @@ function showPlaces(information) {
     })
     .then (data => {
         if (data.wikipedia_extracts && data.wikipedia && data.preview.source) {
-            console.log(data);
-            console.log(data.wikipedia_extracts);
-            console.log(data.wikipedia)
-            console.log(data.preview.source)
-            console.log(data.wikipedia_extracts.html)
-            divPlacesInformation.innerHTML = `
-            
-            `;
             divPlaces.innerHTML += `
             <div class="column-data">
                 <img src="${data.preview.source}" alt="${data.wikipedia_extracts.title}">
@@ -87,15 +74,13 @@ function showPlaces(information) {
                     <h3>${data.wikipedia_extracts.title}</h3>
                     <p>${data.wikipedia_extracts.text}</p>
                 </div>
-
             </div>
             <br><hr>
-            `
-
+            `;
         }
         
     })
     .catch(err => {
         console.log(err);
-    })
+    });
 }
