@@ -4,6 +4,7 @@ const btnSearch = document.getElementById("btn-search");
 const txtSearch = document.getElementById("search-text");
 const spanInformation = document.getElementById("information");
 const divPlaces = document.getElementById("places");
+const divPlacesInformation = document.getElementById("places-information")
 
 /* Event listeners */
 btnSearch.addEventListener("click", searchCity);
@@ -11,9 +12,10 @@ btnSearch.addEventListener("click", searchCity);
 /* Main program */
 
 function searchCity() {
+    divPlaces.innerHTML = "";
     if (txtSearch.value){
         let valueTxtSearch = txtSearch.value;
-        fetch(`http://api.opentripmap.com/0.1/en/places/geoname?name="${valueTxtSearch}"&apikey=${apiKey}`)
+        fetch(`https://api.opentripmap.com/0.1/en/places/geoname?name="${valueTxtSearch}"&apikey=${apiKey}`)
         .then(res => {
             if (!res.ok){
                 spanInformation.innerText = "There is an error with the server!";
@@ -49,7 +51,7 @@ function loadPlaces(information) {
         console.log(data);
         //console.log(data.features[1].properties.name);
         for (const element of data.features){
-            console.log(element.properties.xid);
+            //console.log(element.properties.xid);
             showPlaces(element.properties.xid);
         }
     })
@@ -59,7 +61,7 @@ function loadPlaces(information) {
 }
 
 function showPlaces(information) {
-    console.log(information)
+    //console.log(information)
     fetch(`https://api.opentripmap.com/0.1/en/places/xid/${information}?apikey=${apiKey}`)
     .then(res => {
         if (!res.ok){
@@ -69,10 +71,29 @@ function showPlaces(information) {
         }
     })
     .then (data => {
-        console.log(data);
-        console.log(data.wikipedia_extracts);
-        console.log(data.wikipedia)
-        console.log(data.preview.source)
+        if (data.wikipedia_extracts && data.wikipedia && data.preview.source) {
+            console.log(data);
+            console.log(data.wikipedia_extracts);
+            console.log(data.wikipedia)
+            console.log(data.preview.source)
+            console.log(data.wikipedia_extracts.html)
+            divPlacesInformation.innerHTML = `
+            
+            `;
+            divPlaces.innerHTML += `
+            <div class="column-data">
+                <img src="${data.preview.source}" alt="${data.wikipedia_extracts.title}">
+                <div class="wiki">
+                    <h3>${data.wikipedia_extracts.title}</h3>
+                    <p>${data.wikipedia_extracts.text}</p>
+                </div>
+
+            </div>
+            <br><hr>
+            `
+
+        }
+        
     })
     .catch(err => {
         console.log(err);

@@ -3,8 +3,11 @@ body, html {
     font-family: 'Montserrat', sans-serif;
 }
 
+body {
+    background-image: url("../img/email-pattern.png");
+}
+
 header {
-    border: 1px solid red;
     text-align: center;
 }
 
@@ -14,7 +17,6 @@ header {
 }
 
 .container {
-    border: 1px solid blue;
     text-align: center;
 }
 
@@ -32,4 +34,42 @@ header {
 .places-container {
     display: flex;
     flex-direction: column;
+}
+
+
+img {
+    width: 266px;
+    height: 400px;
+}
+
+.column-data {
+    display: flex;
+    flex-direction: row;
+    margin: 15px 15px;
+}
+
+.wiki {
+    margin: auto 0;
+}
+
+
+
+@media (max-width: 1024px) {
+    .column-data {
+        min-width: 45%;
+        flex-direction: column;
+    }
+    img {
+        margin: 0 auto;
+    }
+}
+  
+@media (max-width: 480px) {
+    .column-data {
+        min-width: 100%;
+        flex-direction: column;
+    }
+    img {
+        margin: 0 auto;
+    }
 }
