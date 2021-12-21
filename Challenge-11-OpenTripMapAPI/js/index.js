@@ -4,7 +4,6 @@ const btnSearch = document.getElementById("btn-search");
 const txtSearch = document.getElementById("search-text");
 const spanInformation = document.getElementById("information");
 const divPlaces = document.getElementById("places");
-const divPlacesInformation = document.getElementById("places-information")
 
 /* Event listeners */
 btnSearch.addEventListener("click", searchCity);
@@ -33,7 +32,6 @@ function searchCity() {
         });
     } else {
         spanInformation.innerText = "Type a city";
-        console.log("Type a city!")
     }
 }
 
@@ -77,8 +75,7 @@ function showPlaces(information) {
             </div>
             <br><hr>
             `;
-        }
-        
+        } 
     })
     .catch(err => {
         console.log(err);

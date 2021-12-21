@@ -40,6 +40,8 @@ header {
 img {
     width: 266px;
     height: 400px;
+    margin: 10px 15px;
+
 }
 
 .column-data {
@@ -50,16 +52,15 @@ img {
 
 .wiki {
     margin: auto 0;
+    padding: 0 25px;
 }
-
-
 
 @media (max-width: 1024px) {
     .column-data {
-        /*min-width: 45%;*/
         margin: 0 auto;
         flex-direction: column;
     }
+    
     img {
         margin: 0 auto;
     }
@@ -67,11 +68,10 @@ img {
   
 @media (max-width: 480px) {
     .column-data {
-        /*min-width: 100%;*/
         margin: 0 auto;
-
         flex-direction: column;
     }
+
     img {
         margin: 0 auto;
     }
